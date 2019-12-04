@@ -3,11 +3,18 @@ Takes in an input directory and a redaction PDF, outputs all redacted PDFs to se
 
 Requirements: 
 PyPDF2  (pip install PyPDF2) 
+
 tkinter (pip install tkinter)
+
 os 
+
 pdf2img (pip install pdf2img)
+
 img2pdf (pip install img2pdf)
+
 poppler for windows (https://blog.alivate.com.au/poppler-windows/)
+
+
 There are quite possibly more requirements that you'll need, honestly I installed so many things over the course of writing this that I couldn't keep track. If you notice something, make an Issue and I'll update this.
 
 You'll need to add PyPDF2 to your %PATH%, as well as poppler's bin folder.
