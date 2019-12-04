@@ -1,12 +1,12 @@
 # pdfRedact
-Takes in an input directory and a redaction PDF, outputs all redacted PDFs to selected output directory. Python3
+Takes in an input directory and a redaction PDF, outputs all redacted PDFs to selected output directory. Python 3.8.0
 
 Requirements: 
 PyPDF2  (pip install PyPDF2) 
 
 tkinter (pip install tkinter)
 
-os 
+os (should come with your python installation)
 
 pdf2img (pip install pdf2img)
 
@@ -21,10 +21,12 @@ You'll need to add PyPDF2 to your %PATH%, as well as poppler's bin folder.
 
 Program flow: 
 Create a redaction PDF. This PDF must have your redactions (I use black rectangles) and nothing else, with a transparent background. 
-Instructions on how to do it on Linux: https://ask.libreoffice.org/en/question/182659/libreoffice-writer-page-transparency/
+Instructions on how to do it on Linux: https://ask.libreoffice.org/en/question/182659/libreoffice-writer-page-transparency/ *
 
-Run the code (py redact.py); It will open a file dialogue. First select the input folder with unredacted PDFs. Next select your output folder. Output folder MUST be empty beforehand for the later steps to succeed
+Run the code (py redact.py); It will open a file dialogue. First select the input folder with unredacted PDFs. Next select your EMPTY output folder. 
 
-Lastly, select your redaction PDF as detailed above. This will fill the output folder with your input files visually merged with the redaction PDF. However, to properly redact the information there is one more step.
+Lastly, select your redaction PDF. This will fill the output folder with your input files visually merged with the redaction PDF. However, to properly redact the information there is one more step.
 
-Run py flatten.py. It will ask you to select a folder- select wherever you put the output from redact.py. It will then output all of the final PDFs after converting them to JPG and back. You will likely lose a small amount of resolution in the process. This removes the underlying information so that your redacted information can't be highlighted/copied. If flatten.py fails with a poppler error, follow the steps commented in the file.
+Run flatten.py. It will ask you to select a folder- select wherever you put the output from redact.py. It will then output all of the final PDFs after converting them to JPG and back. You will likely lose a small amount of resolution in the process. This removes the underlying information so that your redacted information can't be highlighted/copied. If flatten.py fails with a poppler error, follow the steps commented in the file.
+
+*if you know how to create a transparent pdf in Windows, PLEASE contact me.
