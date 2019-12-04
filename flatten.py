@@ -3,12 +3,13 @@ import img2pdf
 import tkinter, tkinter.filedialog
 from pdf2image import convert_from_path
 
-directory = tkinter.filedialog.askdirectory() #select the output from redact.py
+directory = tkinter.filedialog.askdirectory() #select the output folder from redact.py
+#directory = r"C:\Users\" #if you prefer to hardcode the file path. 
 
 for file in os.scandir(directory):
     images= convert_from_path(file)
-    #if this breaks, you need poppler in your path. 
-    #or just use this (below) but replace poppler_path with your poppler path 
+    #if this breaks, you forgot to add poppler's bin folder to your path environment variable 
+    #you can also use this (below) but replace poppler_path with your poppler path 
     #images= convert_from_path(file,poppler_path='C:\\poppler-0.68.0\\bin')
     
     for image in images: #this is the dumbest loop I've ever written even though it works
